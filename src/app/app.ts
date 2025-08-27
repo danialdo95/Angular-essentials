@@ -1,12 +1,17 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Header } from "./header/header";
+import { User } from "./user/user";
+import { DUMMY_USERS } from './dummy-users';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [Header, User],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angular-essentials');
+  
+  users = DUMMY_USERS;
+  // protected readonly title = signal('angular-essentials');
 }
